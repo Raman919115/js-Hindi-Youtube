@@ -61,27 +61,27 @@ const users = [
 ];
 
 // console.log(users[3].email)
-console.log(Object.keys(tinderUser))  
+// console.log(Object.keys(tinderUser))  
 /*Object.keys method se hum kisi bhi 
 object k key print kr skte hain
 or ye method hume data ko array mein store krke deta h
 jis pr hum loops ke through operations laga skte h
 */
 
-console.log(Object.values(tinderUser))
+// console.log(Object.values(tinderUser))
 /*Object.values method se hum kisi bhi 
 object k value print kr skte hain
 or ye method hume data ko array mein store krke deta h
 jis pr hum loops ke through operations laga skte h
 */
 
-console.log(Object.entries(tinderUser))
+// console.log(Object.entries(tinderUser))
 /*Object.entries method hume object ke every key-value
 ko seprate array store kreke deta h
 Basically ye hume array of array return krta h
 */
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')) 
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')) 
 /*kaafi baar hum object ko loop through krke 
 value nikalte hain agar wo value exist nhi krti h to 
  webapp/app k crash hone k chances bhad jaaate hain
@@ -89,3 +89,26 @@ value nikalte hain agar wo value exist nhi krti h to
  puch skte h ki ye value exist krti h ya nhi
   */
 
+
+
+//  ******************Object de-structureing and JSON api******************
+
+const course = {
+  coursename : "js in hindi",
+  price : "999",
+  courseInstructor : "hitesh"
+}
+
+// console.log(course.courseInstructor)
+
+const {courseInstructor : instructor } = course     // this is how  we destructure object and also can assign a name to them
+
+// console.log(courseInstructor);
+console.log(instructor);
+
+
+// {
+//   "name" : "hitesh",
+//   "coursename" : "js in hindi",              //example of JSON 
+//   "price" : "free"
+// }
