@@ -20,9 +20,9 @@ console.log(real_another_array);
 
 
 
-console.log(Array.isArray("Hitesh"))
-console.log(Array.from("Hitesh"));         //typeof this is object
-console.log(Array.from({name:"hitesh"}))    //interesting   typeof this is object
+console.log(Array.isArray("Hitesh"))      // .isArray method is used to check it is array or not and gives result in boolean
+console.log(Array.from("Hitesh"));         //typeof this is object ,  .from method is used to convert string into array
+console.log(Array.from({name:"hitesh"}))    //interesting   it returns a blank array
 
 let score1 = 100
 let score2 = 200
