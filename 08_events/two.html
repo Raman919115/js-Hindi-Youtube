@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">stop</button>
+</body>
+<script>
+    
+    // setTimeout(function(){
+    //     console.log("Hitesh");
+    // },2000)
+
+    const sayHitesh = function(){
+        console.log("Hitesh");     // we can also defined setTimeout like this
+    }
+
+    setTimeout(sayHitesh,2000);  // in setTimeout here we give the reference of the varible not to execute 
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series"
+    }
+
+    const changeMe = setTimeout(changeText, 2000);
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)               // to stop the setTimeout we use clearTimeout function like that
+        console.log('STOPPED');          
+    })
+    // setTimeout(() => {
+    //     changeText()    //this is another type of setTimeout using arrow function
+    // }, 2000);          // in setTimeout arrow function we must call the function using()
+    
+</script>
+</html>
