@@ -1,0 +1,75 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Profile Card</title>
+   </head>
+   <body style="background-color: #212121;">
+        <!-- 0    UNSENT  Client has been created. open() not called yet.
+        1    OPENED  open() has been called.
+        2    HEADERS_RECIVED    send() has been called, and headers and status are available.
+        3    LOADING    Downloading; responseText holds partial data.
+        4    DONE     The operation is complete. -->
+
+        <button id = "showProfile">show github profile</button>
+
+        <div id="card" class="card">
+            <i mg id="avatar" src="" alt="avatar" >
+            <h2 id="name"></h2>
+            <p>followers : <span id="followers"></span></p>
+        </div>
+        <style>
+            .card {
+                display: none;
+                border: 2px solid#ccc;
+                padding: 20px;
+                width: 300px;
+                margin-top: 20px;
+                border-radius: 10px;
+                text-align: center;
+                background-color: #f0f0f0;
+            }
+            img{
+                width: 100px;
+                border-radius: 50%  ;
+            }
+        </style>
+   </body>
+   <script>
+    // const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    //  const xhr = new XMLHttpRequest();
+    //  xhr.open('GET',requestUrl)
+    //  xhr.onreadystatechange = function(){   // to continuously track the readystate 
+    //     console.log(xhr.readyState);
+    //     if(xhr.readyState === 4){
+    //         const data = JSON.parse(this.responseText)  //method to change string into json/object
+    //         console.log(typeof data);   // most of the time url se data string mein hi aata h
+    //         console.log(data.followers); 
+    //     }
+    //  }
+     
+    //  xhr.send()
+
+    document.getElementById("showProfile").addEventListener('click', function(){
+        const request = new XMLHttpRequest();
+        const card = document.getElementById('card')
+
+        request.open('GET','https://api.github.com/users/hiteshchoudhary', true)
+
+        request.onreadystatechange = function(){
+            if(request.readyState === 4 && request.status === 200){
+                const data = JSON.parse(request.responseText);
+
+                document.getElementById('avatar').src = data.avatar_url;
+                document.getElementById('name').textContent = data.name || data.login;
+                document.getElementById('followers').textContent = data.followers;
+
+                card.style.display = 'block'
+            
+            }
+        }
+        request.send();
+    })
+   </script>
+   </html>
