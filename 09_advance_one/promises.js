@@ -102,7 +102,7 @@ promiseFour.then((user) =>{
 
 fetch('https://jsonplaceholder.typicode.com/users')
 .then((response) =>{
-    console.log(response);
+    return response.json()
 })
 .then((data) =>{
     console.log(data);
@@ -113,7 +113,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
 fetch('https://api.github.com/users/hiteshchoudhary')
 .then((response) =>{
-    console.log(response);
+    return response.json()
 })
 .then((data) =>{
     console.log(data);
