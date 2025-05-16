@@ -20,7 +20,6 @@ let heroPower = {
 // prototype   ===A reference to the prototype for a class of objects.
 
 Object.prototype.hitesh = function(){    // all array,function and string are treated as object in js 
-Object.prototype.hitesh = function(){    // all array,function and string are treated as object in js 
     console.log(`hitesh is present in all objects`);   // so we access the top level hierarchy(object) and we add our own property(custom property)
 }
 
