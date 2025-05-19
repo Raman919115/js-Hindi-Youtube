@@ -26,8 +26,31 @@ Object.defineProperty(chai, 'name', {      //Defining a new property called name
 
 console.log(Object.getOwnPropertyDescriptor(chai, "name"));   //This prints the full descriptor (details) of the name property on the chai object.
 
-for (let [key, value] of Object.entries(chai)) {   //forof loop mostly object k liye use hota h
+for (let [key, value] of Object.entries(chai)) {   
     if (typeof value !== 'function') {           
         console.log(`${key} : ${value}`);
     }
 }
+
+
+
+//forof loop mostly object k liye use hota h
+//Object is not iteratable by default, we can make object iterable using Object.entries 
+// Object.entries() is a built-in method that returns an array of key-value pairs from an object.
+
+
+const user = {
+    name: "Raman",
+    age: 24,
+    email: "r@gmail.com"
+  };
+  
+  const entries = Object.entries(user);
+  console.log(entries);
+
+//   Now you can loop through it like this:
+
+for (const [key, value] of Object.entries(user)) {
+    console.log(`${key}: ${value}`);
+  }
+  
